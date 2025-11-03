@@ -1,22 +1,22 @@
-# SMTP
+# 비밀번호 찾기
 
-- simple mail transper protocol
-- 이메일을 보내는 컴퓨터, 즉 이메일 서버가 있어야 함.
-- Supabase 는 1시간 2~3회만 인증메일 보낼 수있습니다.
-- 참조블러그
-- https://mycodingshub.github.io/blog/2025-01-11-nextjs-supabase-tutorial-5-sending-confirm-email-without-domain/
+## 1. 사전 준비
 
-## 1. 서비스 신청
+- `/src/app/(default)/signin/page.tsx` 업데이트
 
-- Brevo : 도메일 없이 가능.
-- Resend : 도메인 필요함.
+```tsx
+<div className='flex flex-col gap-2'>
+  <Link className='text-muted-foreground hover:underline' href={'/signup'}>
+    계정이 없으시다면? 회원가입
+  </Link>
+  <Link
+    className='text-muted-foreground hover:underline'
+    href={'/forget-password'}
+  >
+    비밀번호를 잊으셨나요?
+  </Link>
+</div>
+```
 
-## 2. Brervo 서비스 신청
-
-- 반드시 사용하는 gmail 권장함
-- 전화가 해외 문자 옴
-- https://www.brevo.com
-
-## 3. 회원가입 성공하신 분은 별도 셋팅 진행
-
-- 추후 연락 가능
+- `/src/app/(default)/forget-password/page.tsx`
+- UI 작업
